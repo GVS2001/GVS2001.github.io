@@ -105,9 +105,9 @@ document.addEventListener('touchstart', function(event) {
   let clientX = event.touches[0].clientX;
   
   if (clientX > screenMiddle) {
-      newHeight += 3;
+      newHeight += 1;
   } else {
-      newHeight = Math.max(10, rec2.height - 3);
+      newHeight = Math.max(10, rec2.height - 1);
   }
   
   rec2.x -= (newWidth - rec2.width) / 2;
@@ -173,7 +173,7 @@ function drawStaticText() {
   ctx.fillText("R", canvas.width*0.9, canvas.height - 50);
 
   ctx.font = "bold 25px Arial";
-  ctx.fillText("+",canvas.width / 2 - 5, canvas.height / 2);
+  ctx.fillText("+",canvas.width / 2 - 5, (rec2.y + rec1.y )/2);
 
   ctx.font = "bold 20px Arial";
   ctx.fillText("Porcentagem de Aniseiconia", canvas.width*0.02, canvas.height*0.1);
