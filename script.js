@@ -105,9 +105,9 @@ document.addEventListener('touchstart', function(event) {
   let clientX = event.touches[0].clientX;
   
   if (clientX > screenMiddle) {
-      newHeight += 10;
+      newHeight += 5;
   } else {
-      newHeight = Math.max(10, rec2.height - 10);
+      newHeight = Math.max(10, rec2.height - 5);
   }
   
   rec2.x -= (newWidth - rec2.width) / 2;
@@ -116,7 +116,7 @@ document.addEventListener('touchstart', function(event) {
   rec2.width = Math.max(1, newWidth);
   rec2.height = Math.max(1, newHeight);
   drawScene();
-  setTimeout(() => {}, 1500);
+  setTimeout(() => {}, 3000);
 });
 
 // Mouse scroll event (Zoom in/out) to change scale
