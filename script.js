@@ -83,9 +83,9 @@ document.addEventListener('mousedown', function(event) {
   let newHeight = rec2.height;
   
   if (event.clientX > screenMiddle) {
-      newHeight += 10;
+      newHeight += 5;
   } else {
-      newHeight = Math.max(10, rec2.height - 10);
+      newHeight = Math.max(10, rec2.height - 5);
   }
   
   rec2.x -= (newWidth - rec2.width) / 2;
@@ -121,7 +121,7 @@ document.addEventListener('touchstart', function(event) {
 
 // Mouse scroll event (Zoom in/out) to change scale
 document.addEventListener('wheel', function(event) {
-  let scaleFactor = event.deltaY < 0 ? 10 : -10;
+  let scaleFactor = event.deltaY < 0 ? 3: -3;
 
   let newWidth = rec2.width;
   let newHeight = rec2.height + scaleFactor;
@@ -173,7 +173,7 @@ function drawStaticText() {
   ctx.fillText("R", canvas.width*0.9, canvas.height - 50);
 
   ctx.font = "bold 25px Arial";
-  ctx.fillText("+",canvas.width / 2 - 5, (rec2.y + rec1.y )/2);
+  ctx.fillText("+",canvas.width / 2 - 5, canvas.height / 2);
 
   ctx.font = "bold 20px Arial";
   ctx.fillText("Porcentagem de Aniseiconia", canvas.width*0.02, canvas.height*0.1);
