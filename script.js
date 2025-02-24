@@ -115,8 +115,8 @@ document.addEventListener('touchstart', function(event) {
 
   rec2.width = Math.max(1, newWidth);
   rec2.height = Math.max(1, newHeight);
-  setTimeout(() => {}, 1000);
   drawScene();
+  setTimeout(() => {}, 1500);
 });
 
 // Mouse scroll event (Zoom in/out) to change scale
