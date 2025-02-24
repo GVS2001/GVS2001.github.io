@@ -105,9 +105,9 @@ document.addEventListener('touchstart', function(event) {
   let clientX = event.touches[0].clientX;
   
   if (clientX > screenMiddle) {
-      newHeight += 5;
+      newHeight += 3;
   } else {
-      newHeight = Math.max(10, rec2.height - 5);
+      newHeight = Math.max(10, rec2.height - 3);
   }
   
   rec2.x -= (newWidth - rec2.width) / 2;
