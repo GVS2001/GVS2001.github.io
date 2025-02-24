@@ -98,6 +98,9 @@ document.addEventListener('mousedown', function(event) {
 
 // Liste for touch in each side of the screen
 document.addEventListener('touchstart', function(event) {
+  event.preventDefault(); // Prevents multiple rapid triggers
+  if (event.touches.length > 1) return; // Ignore multi-touch events
+  
   const screenMiddle = window.innerWidth / 2;
   let newWidth = rec2.width;
   let newHeight = rec2.height;
@@ -116,7 +119,7 @@ document.addEventListener('touchstart', function(event) {
   rec2.width = Math.max(1, newWidth);
   rec2.height = Math.max(1, newHeight);
   drawScene();
-});
+}, { passive: false });
 
 // Mouse scroll event (Zoom in/out) to change scale
 document.addEventListener('wheel', function(event) {
